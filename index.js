@@ -3,7 +3,8 @@ import LuminaJS from 'luminajs';
 import './app/services/db.js';
 
 const apiServer = new LuminaJS({
-    port: process.env.PORT
+    port: process.env.PORT,
+    debug: true
 });
 
 import "./app/models.js";
