@@ -1,0 +1,15 @@
+version: '3'
+services:
+  call2jira-proxy:
+    container_name:   call2jira-proxy
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3030:3030'
+    networks:
+      - backend
+networks:
+  backend:
+    name: backend
