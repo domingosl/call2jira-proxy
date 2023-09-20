@@ -2,9 +2,13 @@ import mongoose from 'mongoose';
 
 const Numbers = mongoose.model('Number');
 
-export default async ({resolve}) => {
+export default async ({req, resolve}) => {
 
-    const numbers = await Numbers.find({});
+    const query = {};
+    req.query.country && (query['location.country'] = req.query.country.toLowerCase());
+    req.query.place && (query['location.place'] = req.query.place.toLowerCase());
+
+    const numbers = await Numbers.find(query);
 
     resolve(numbers);
 

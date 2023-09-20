@@ -8,8 +8,8 @@ const numbers = [
         identifier: '+441213876593',
         type: 'local',
         location: {
-            country: 'England',
-            place: 'Birmingham',
+            country: 'england',
+            place: 'birmingham',
             geo: {
                 coordinates: [52.47754, -1.894053]
             }
