@@ -20,6 +20,9 @@ const NumberSchema = mongoose.Schema( {
             type: String,
             required: true
         },
+        flag: {
+            type: String
+        },
         geo: {
             type: {
                 type: String,

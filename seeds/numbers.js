@@ -10,6 +10,7 @@ const numbers = [
         location: {
             country: 'england',
             place: 'birmingham',
+            flag: '🇬🇧',
             geo: {
                 coordinates: [52.47754, -1.894053]
             }
