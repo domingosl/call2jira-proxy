@@ -13,8 +13,6 @@ export default async ({body, resolve, forbidden, logger }) => {
     if(await Extensions.countDocuments({ to: body.numberId, inUse: false }) === 0)
         return forbidden("The selected number has no extensions available, please try another number.");
 
-    console.log({        to: body.numberId,
-        inUse: false})
 
     const extension = await Extensions.findOneAndUpdate({
         to: body.numberId,
