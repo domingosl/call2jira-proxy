@@ -11,6 +11,7 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.5.1",
     "dotenv": "^16.3.1",
     "luminajs": "github:domingosl/luminajs",
     "mongoose": "^7.5.2"

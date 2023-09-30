@@ -20,7 +20,7 @@ export default async ({req, res, body, resolve, forbidden, logger}) => {
 
     const xmlResponse = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Say language="en-UK" voice="woman">
+  <Say language="en-UK" voice="Polly.Amy">
     Welcome!. Please enter your 4-digit extension number.
   </Say>
   <Gather action="/webhooks/twilio/extension-input" method="POST" numDigits="4" finishOnKey="#" input="dtmf" />
