@@ -4,8 +4,6 @@ const Extensions = mongoose.model('Extension');
 
 export default async ({body, resolve, forbidden, logger }) => {
 
-    logger.debug("", { body });
-
     if(!mongoose.Types.ObjectId.isValid(body.numberId + ""))
         return forbidden("Invalid phone number id");
 
@@ -17,8 +15,7 @@ export default async ({body, resolve, forbidden, logger }) => {
 
     const extension = await Extensions.findOneAndUpdate({
         to: body.numberId,
-        inUse: false,
-        number: body.extension
+        inUse: false
     }, {
         webhook: body.webhook,
         inUse: true
