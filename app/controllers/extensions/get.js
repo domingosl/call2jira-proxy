@@ -1,18 +1,6 @@
 import mongoose from 'mongoose';
-
+import { isValidHttpUrl } from '../../services/http-utils.js';
 const Extensions = mongoose.model('Extension');
-
-function isValidHttpUrl(string) {
-    let url;
-
-    try {
-        url = new URL(string);
-    } catch (_) {
-        return false;
-    }
-
-    return url.protocol === "http:" || url.protocol === "https:";
-}
 
 export default async ({body, resolve, forbidden }) => {
 
@@ -27,7 +15,8 @@ export default async ({body, resolve, forbidden }) => {
 
     const extension = await Extensions.findOneAndUpdate({
         to: body.numberId,
-        inUse: false
+        inUse: false,
+        number: body.extension
     }, {
         webhook: body.webhook,
         inUse: true

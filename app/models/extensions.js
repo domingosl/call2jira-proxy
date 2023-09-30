@@ -3,16 +3,13 @@ import mongoose from 'mongoose';
 const ExtensionSchema = mongoose.Schema({
     to: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Number',
-        required: true
+        ref: 'Number'
     },
     number: {
-        type: String,
-        required: true
+        type: String
     },
     webhook: {
-        type: String,
-        required: false
+        type: String
     },
     inUse: {
         type: Boolean,
