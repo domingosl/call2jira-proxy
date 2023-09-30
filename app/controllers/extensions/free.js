@@ -5,9 +5,6 @@ export default async ({body, req, resolve, forbidden }) => {
 
     //TODO: Check auth
 
-    console.log("Hello!");
-    console.log({body});
-
     if(!mongoose.Types.ObjectId.isValid(body.numberId + ""))
         return forbidden("Invalid phone number id");
 
@@ -17,7 +14,6 @@ export default async ({body, req, resolve, forbidden }) => {
         number: req.params.extension,
         inUse: true
     }, {
-        to: null,
         inUse: false,
         webhook: null
     })
