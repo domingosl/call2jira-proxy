@@ -5,12 +5,14 @@ export default async ({body, req, resolve, forbidden }) => {
 
     //TODO: Check auth
 
-    if(!mongoose.Types.ObjectId.isValid(body.numberId + ""))
-        return forbidden("Invalid phone number id");
-
     console.log({        to: body.numberId,
         number: req.params.extension,
         inUse: true});
+
+    if(!mongoose.Types.ObjectId.isValid(body.numberId + ""))
+        return forbidden("Invalid phone number id");
+
+
     await Extensions.findOneAndUpdate({
         to: body.numberId,
         number: req.params.extension,
