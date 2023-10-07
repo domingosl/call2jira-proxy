@@ -9,3 +9,15 @@ export function isValidHttpUrl(string) {
 
     return url.protocol === "http:" || url.protocol === "https:";
 }
+
+export function removeSpecial(unsafe) {
+    return unsafe.replace(/[<>&'"]/g, function (c) {
+        switch (c) {
+            case '<': return '';
+            case '>': return '';
+            case '&': return '';
+            case '\'': return '';
+            case '"': return '';
+        }
+    });
+}

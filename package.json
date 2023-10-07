@@ -11,9 +11,13 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "axios": "^1.5.1",
     "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.2",
     "luminajs": "github:domingosl/luminajs",
-    "mongoose": "^7.5.2"
+    "mongoose": "^7.5.2",
+    "openai": "^4.11.0",
+    "uuid": "^9.0.1"
   }
 }

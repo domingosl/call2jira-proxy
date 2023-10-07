@@ -6,6 +6,8 @@ import extensionsGet from  './controllers/extensions/get.js';
 import extensionsFree from  './controllers/extensions/free.js';
 import twilioRingWebhook from './controllers/webhooks/twilio/ring.js';
 import twilioExtensionInputWebhook from './controllers/webhooks/twilio/extension-input.js';
+import twilioVoiceRecordingWebhook from './controllers/webhooks/twilio/voice-recording.js';
+import outgoingCallMake from './controllers/outgoing-call/index.js';
 
 export default apiServer => {
 
@@ -18,6 +20,9 @@ export default apiServer => {
 
     apiServer.newEndpoint('twilioRingWebhook').respondsAt('/webhooks/twilio/ring').isPost().isPublic().setController(twilioRingWebhook);
     apiServer.newEndpoint('twilioExtInoutWebhook').respondsAt('/webhooks/twilio/extension-input').isPost().isPublic().setController(twilioExtensionInputWebhook);
+    apiServer.newEndpoint('twilioVoiceRecordingWebhook').respondsAt('/webhooks/twilio/voice-recording').isPost().isPublic().setController(twilioVoiceRecordingWebhook);
+
+    apiServer.newEndpoint('outgoingCall').respondsAt('/outgoing-call/make').isPost().isPublic().setController(outgoingCallMake);
 
 
 }
