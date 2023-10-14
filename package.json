@@ -18,6 +18,7 @@
     "luminajs": "github:domingosl/luminajs",
     "mongoose": "^7.5.2",
     "openai": "^4.11.0",
+    "twilio": "^4.18.1",
     "uuid": "^9.0.1"
   }
 }

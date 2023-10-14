@@ -47,7 +47,8 @@ export default async ({req, res, body, resolve, forbidden, logger}) => {
                 numberId: decodedSession.numberId,
                 text: transcription.text,
                 callerNumber: decodedSession.callerNumber,
-                callerCountry: decodedSession.callerCountry
+                callerCountry: decodedSession.callerCountry,
+                issueId: decodedSession.issueId
             }
         });
 
