@@ -4,7 +4,7 @@ const Numbers = mongoose.model('Number');
 
 export default async ({req, res, body, resolve, forbidden, logger}) => {
 
-    console.log(body.AccountSid);
+    logger.debug("Ring event from Twilio", { body });
 
     if (body.AccountSid !== process.env.TWILIO_ACCOUNT_SID)
         return forbidden("Invalid request") && logger.info("Incorrect Account SID in incomming call", { accountSid: body.AccountSid });
