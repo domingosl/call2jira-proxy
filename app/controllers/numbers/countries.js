@@ -6,6 +6,11 @@ export default async ({resolve}) => {
 
     const countries = await Numbers.aggregate([
         {
+            '$match': {
+                'status': true
+            }
+        },
+        {
             '$group': {
                 '_id': '$location.country',
                 'flag': {

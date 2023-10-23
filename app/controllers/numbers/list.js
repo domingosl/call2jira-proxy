@@ -4,7 +4,7 @@ const Numbers = mongoose.model('Number');
 
 export default async ({req, resolve}) => {
 
-    const query = {};
+    const query = { status: true };
     req.query.country && (query['location.country'] = req.query.country.toLowerCase());
     req.query.place && (query['location.place'] = req.query.place.toLowerCase());
 

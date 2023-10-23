@@ -11,6 +11,10 @@ const NumberSchema = mongoose.Schema( {
         enum: ['local','mobile'],
         required: true
     },
+    status: {
+        type: Boolean,
+        default: true
+    },
     location: {
         country: {
             type: String,
